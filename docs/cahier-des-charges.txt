@@ -1,0 +1,56 @@
+= Cahier des Charges du logiciel de Gestion de chantier : =
+
+== 1. PrÃ©sentation gÃ©nÃ©rale ==
+
+	=== 1.1. Objectifs : ===
+
+Fournir un outil informatique aux chefs de chantier leur permettant de simplifier les mÃ©thodes de travail actuelles (plans plastifiÃ©s, prise de mesure Ã  la rÃ¨gle, carte peu lisible et facilement dÃ©toriable, plusieurs documents pour le mÃªme chantier ...).
+Notre outil permet de regrouper tous les documents et de les organiser.
+
+	=== 1.2. CatÃ©gories d'utilisateurs ===
+
+L'application doit permettre aux chefs de chantier de consulter des plans Ã©tablis au prÃ©alable par un architecte via un logiciel d'Ã©dition de plans (DAO) comme Autocad!	Le chef de chantier : Le chef de chantier organise et suit la rÃ©alisation de tout ou partie d'un chantier de travaux publics ou de construction de bÃ¢timent Il rassemble les informations nÃ©cessaires Ã  sa gestion, gÃ¨re et anime les Ã©quipes dont il a la responsabilitÃ©. Il travaille toujours en Ã©troite collaboration avec le conducteur de travaux.
+
+	=== 1.3. Contrainte gÃ©nÃ©rales ===
+
+L'application ne peut-Ãªtre utilisÃ© que sur windows.
+
+----
+
+== 2. DÃ©finitions ==
+
+	=== 2.1. Calques : ===
+
+C'est la reprÃ©sentation d'un type de rÃ©seaux (voirie, Ã©clairage, rÃ©seaux d'eau, tÃ©lÃ©phone, Ã©lectricitÃ©, gaz etc...) ou des types d'entitÃ©s.
+
+	=== 2.2. Plans : ===
+
+Ensemble de calques superposÃ©s reprÃ©sentant le chantier.
+
+----
+
+== 3. Fonctions ==
+
+        === 3.1. Fonction Consultation ===
+
+Visualiser une carte Ã  la fois ainsi que les diffÃ©rentes donnÃ©es schÃ©matisÃ©s sous formes de calques.
+
+        === 3.2. Fonction SÃ©lectionner calques. ===
+
+Rendre visible un calque sur le plan, de mÃªme on pourra masquer un calque !
+
+	=== 3.3. Fonction prise de mesure. ===
+
+Il est possible en de prendre la mesure entre deux points du plans (connaÃ®tre la mesure d?une entitÃ©)
+
+	=== 3.4. Fonction de modification des plans. ===
+
+CrÃ©er une entitÃ© ModifiÃ©.
+
+	=== 3.5. Fonction Enregistrement des modifications. ===
+
+	=== 3.6. Fonction impression des calques sÃ©lectionnÃ©s. ===
+
+Les fonctions sont Ã  affinÃ©s.
+
+----
