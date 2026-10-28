@@ -47,7 +47,12 @@ int main (int argc, char** argv) {
 	GChant gchant;
 	gchant.set_icon_from_file("icon.gif");
 	gchant.maximize();
-	
+
+	// GChant plan.dxf ouvre le plan au demarrage
+	if (argc > 1 && argv[1][0] != '-') {
+		gchant.ouvrir(argv[1]);
+	}
+
 	Gtk::Main::run(gchant);
 	
 	sortie.close();

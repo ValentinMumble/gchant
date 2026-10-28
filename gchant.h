@@ -19,6 +19,7 @@ public:
 	GChant();
 	virtual ~GChant();
 	void lireDXF(string);
+	void ouvrir(string fichier_dxf);	// lit le plan et ses annotations (.ann a cote)
 	void ajoutAnnot(Gtk::TreeModel::Row row);
 	void reDessiner();
 	void setEchelle(double);

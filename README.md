@@ -5,6 +5,8 @@ A viewer for building-site plans, written in C++ with GTK 2 ([gtkmm](https://gtk
 program (a DXF file), shows or hides its layers, zooms in, and reads the notes left on each layer.
 Student project, 2010. The interface is in French.
 
+![GChant showing the house sample plan, with its layers on the left](docs/house.png)
+
 ## What it does
 
 - **Ouvrir** opens a `.dxf` plan and draws it
@@ -21,6 +23,8 @@ measuring tool from the original spec (`docs/cahier-des-charges.txt`) was never 
 The `samples/` folder has a few plans to try, among them `2d_house_plan.DXF` (with notes),
 `hexhouse.DXF`, `HAWKER.DXF`, `canadair.dxf` and `MINIHELI.dxf`. The Mac app carries them too, in
 `GChant.app/Contents/Resources/samples`.
+
+![GChant showing the Canadair sample plan](docs/canadair.png)
 
 ## Run it
 
@@ -73,6 +77,17 @@ carries its own copy, but building it again will then need GTK 2 from somewhere 
 ```bash
 make
 ./GChant
+```
+
+Give it a plan to open it straight away: `./GChant samples/2d_house_plan.DXF`.
+
+## Dev tools
+
+`tools/screenshot.sh` opens the app on a plan and saves its window as a PNG, 1600 px wide (this is how
+the screenshots in `docs/` were made). Build with `make` first.
+
+```bash
+tools/screenshot.sh samples/2d_house_plan.DXF docs/house.png
 ```
 
 ## License

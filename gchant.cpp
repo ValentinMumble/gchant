@@ -266,15 +266,18 @@ void GChant::on_menu_file_open() {
 	//Handle the response:
 	switch (result) {
 		case (Gtk::RESPONSE_OK): {
-			string fichier_dxf = dialog.get_filename();
-			lireDXF(fichier_dxf);
-			fichier_annot = fichier_dxf.replace( fichier_dxf.length()-4, fichier_dxf.length() - (fichier_dxf.length()-4), ".ann");
-			cout << "le fichier_annot : "<< fichier_annot << endl;
-			reDessiner();
+			ouvrir(dialog.get_filename());
 			break; }
 		case (Gtk::RESPONSE_CANCEL): { break; } 
 		default: { break; }
 	}
+}
+
+void GChant::ouvrir(string fichier_dxf) {
+	lireDXF(fichier_dxf);
+	fichier_annot = fichier_dxf.replace( fichier_dxf.length()-4, fichier_dxf.length() - (fichier_dxf.length()-4), ".ann");
+	cout << "le fichier_annot : "<< fichier_annot << endl;
+	reDessiner();
 }
 
 //////////////////////////////////////////////////////////////
