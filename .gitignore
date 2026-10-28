@@ -1,0 +1,10 @@
+# Build output
+*.o
+/GChant
+build/
+
+# Written by the app where it starts
+gchant.log
+
+# Mac
+.DS_Store

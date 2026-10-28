@@ -1,31 +1,21 @@
+# Build GChant with gtkmm 2.4 (on a Mac: brew install gtkmm pkgconf)
 
-prefix =	/usr/local
-exec_prefix =	${prefix}
-bindir =	${exec_prefix}/bin
+CXX ?= c++
+CXXFLAGS ?= -O2 -std=c++11
+GTKMM_CFLAGS := $(shell pkg-config gtkmm-2.4 --cflags)
+GTKMM_LIBS := $(shell pkg-config gtkmm-2.4 --libs)
 
-OBJF =		main.o \
-            dxfhandler.o \
-			gchant.o \
-			dxfarea.o
-EXTERN_LIBS = -L ./lib -ldxflib -L/usr/X11R6/lib -lX11
-INCLUDES = -I ./src
+SOURCES = main.cpp gchant.cpp dxfarea.cpp dxfhandler.cpp \
+	src/objects.cpp src/dxflib/dl_dxf.cpp src/dxflib/dl_writer_ascii.cpp
+OBJECTS = $(SOURCES:.cpp=.o)
 
-all: main
+GChant: $(OBJECTS)
+	$(CXX) -o $@ $(OBJECTS) $(GTKMM_LIBS)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) $(GTKMM_CFLAGS) -I src -c $< -o $@
 
 clean:
-	@echo "Cleaning project..."
-	@find . -name '*.o' -exec rm "{}" \;
-	@if [ -f GChant ]; then rm -f GChant; fi
+	rm -f $(OBJECTS) GChant
 
-distclean: clean
-	rm -f config.log config.cache Makefile config.status
-
-main: $(OBJF)
-	g++ -o GChant $(OBJF) $(EXTERN_LIBS) ./lib/objects.o `pkg-config gtkmm-2.4 --cflags --libs`
-
-%.o : %.cpp
-	$(CXX) -c $(CPPFLAGS) $(CXXFLAGS) $(INCLUDES) -O3 -Wall $< -o $@ `pkg-config gtkmm-2.4 --cflags --libs`
-
-doc :
-	@echo "Building documentation"
-	@doxygen doxy.cfg
+.PHONY: clean

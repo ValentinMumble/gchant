@@ -349,7 +349,7 @@ void GChant::ecrire(string fic, string chaine)
 
 
 void GChant::on_button_add() {
-	ecrire()
+	// Unfinished in the original: ecrire() only appended a placeholder line
 }
 
 void GChant::on_button_edit() {
